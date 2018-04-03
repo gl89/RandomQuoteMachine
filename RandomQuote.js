@@ -1,8 +1,21 @@
 //chuck norris quotes api works
 //1.figure out why random json doesnt work for other api
 //2. make it look better
-//3. color of arrays to make background change colors
-//functionally complete
+
+$(function() {
+
+  var colors = ['red', 'blue', 'green', 'grey'],
+    color;
+
+  $("#click").click(function() {
+    var randColor;
+    do {
+      randColor = colors[Math.floor(Math.random() * colors.length)];
+    } while (color == randColor);
+    $('body').css('background-color', randColor);
+    color = randColor;
+  });
+});
 
 $(document).ready(function() {
   $("#click").click(function() {
